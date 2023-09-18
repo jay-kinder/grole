@@ -1,0 +1,37 @@
+name: Release Pipeline
+on:
+  release:
+    types: [created]
+
+jobs:
+  release-pipeline:
+    name: Release Pipeline
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [linux, windows, darwin]
+        goarch: [amd64, arm64]
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: "./go.mod"
+
+      - name: Set APP_VERSION Variable
+        run: echo APP_VERSION=$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev) >> ${GITHUB_ENV}
+
+      - name: Release for Linux, Mac & Windows
+        uses: wangyoucao577/go-release-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          goos: ${{ matrix.goos }}
+          goarch: ${{ matrix.goarch }}
+          release_tag: "${{ env.APP_VERSION }}"
+          md5sum: FALSE
+          ldflags: -X "main.version=${{ env.APP_VERSION }}"

@@ -1,0 +1,45 @@
+name: Run Tests & Check Test Coverage
+
+on:
+  pull_request:
+
+jobs:
+  test-and-check-coverage:
+    name: Run Tests & Check Test Coverage
+    runs-on: ubuntu-latest
+    env:
+      TESTCOVERAGE_THRESHOLD: 90
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: "./go.mod"
+
+      - name: Create sa.json File
+        uses: jsdaniell/create-json@v1.2.2
+        with:
+          name: "sa.json"
+          json: ${{ secrets.GOOGLE_CREDENTIALS }}
+
+      - name: Run Tests
+        run: |
+          export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/sa.json"
+          go test -v -coverprofile=coverage.out -v ./helpers/...
+          go tool cover -func=coverage.out -o=coverage.out
+
+      - name: Check Test Coverage
+        run: |
+          export GOOGLE_APPLICATION_CREDENTIALS="$(pwd)/sa.json"
+          echo "Quality Gate: checking test coverage is above threshold ..."
+          echo "Threshold             : ${TESTCOVERAGE_THRESHOLD}%"
+          TOTALCOVERAGE=$(cat coverage.out | grep -m 1 total | grep -Eo '[0-9]+\.[0-9]+')
+          echo "Current test coverage : ${TOTALCOVERAGE}%"
+          if (( $(echo "${TOTALCOVERAGE} ${TESTCOVERAGE_THRESHOLD}" | awk '{print ($1 > $2)}') )); then
+              echo "Current test coverage meets the minimum threshold"
+          else
+              echo "Current test coverage is below threshold. Please add more unit tests to increase coverage."
+              exit 1
+          fi

@@ -1,0 +1,21 @@
+{
+  "name": "grole",
+  "image": "eu.gcr.io/cts-public-images-1/cts-extra:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "davidanson.vscode-markdownlint",
+        "golang.go"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.19"
+    }
+  },
+  "postCreateCommand": "pre-commit install && go install golang.org/x/tools/cmd/goimports@latest",
+  "remoteUser": "vscode"
+}
