@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Cloud-Technology-Solutions/grole/helpers"
 	"github.com/akamensky/argparse"
+	"github.com/jay-kinder/grole/helpers"
 )
 
 var version = "v1.0.0"
