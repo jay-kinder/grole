@@ -10,7 +10,7 @@ import (
 	"github.com/jay-kinder/grole/helpers"
 )
 
-var version = "v1.0.0"
+var version string = "v1.0.0"
 
 func main() {
 	parser := argparse.NewParser("grole", "☁️  grole is a command line tool for establishing which Google Cloud Roles contain a given permission, and also which permissions a given Role has.")
