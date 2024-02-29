@@ -27,13 +27,6 @@ Then `grole` is the tool for you!
 
 ## Installing & Updating :package:
 
-_Whilst private, use the go install and also run the following:_
-
-```bash
-export GOPRIVATE=github.com/Cloud-Technology-Solutions/grole &&
-git config --global url."ssh://git@github.com".insteadOf "https://github.com"
-```
-
 If you already have Go installed, you can simply install `grole` using:
 
 ```bash
