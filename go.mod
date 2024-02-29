@@ -1,4 +1,4 @@
-module github.com/Cloud-Technology-Solutions/grole
+module github.com/jay-kinder/grole
 
 go 1.19
 

@@ -1,8 +1,8 @@
 # Grole :cloud:
 
-![Release](https://img.shields.io/github/v/release/Cloud-Technology-Solutions/grole?style=social)
-![Go Version](https://img.shields.io/github/go-mod/go-version/Cloud-Technology-Solutions/grole?style=plastic)
-[![Pipeline Status](https://github.com/Cloud-Technology-Solutions/grole/actions/workflows/release.yaml/badge.svg)](https://github.com/Cloud-Technology-Solutions/grole/actions/workflows/release.yaml)
+![Release](https://img.shields.io/github/v/release/jay-kinder/grole?style=social)
+![Go Version](https://img.shields.io/github/go-mod/go-version/jay-kinder/grole?style=plastic)
+[![Pipeline Status](https://github.com/jay-kinder/grole/actions/workflows/release.yaml/badge.svg)](https://github.com/jay-kinder/grole/actions/workflows/release.yaml)
 
 ![Maintained](https://img.shields.io/maintenance/yes/2023)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -61,7 +61,7 @@ rm -f grole-"${GROLE_VERSION}"-"$(dpkg --print-architecture)".tar.gz
 
 ### Windows
 
-Go to the [Releases](https://github.com/Cloud-Technology-Solutions/grole/releases)
+Go to the [Releases](https://github.com/jay-kinder/grole/releases)
 page and download the zip file you require.
 
 Once unzipped, you will find a `.exe` you can run to install `grole`.
@@ -102,7 +102,7 @@ grole [-r|--role] compute.admin
 ## Issues :beetle:
 
 If you find any bugs, or think of any issues you would like to raise, please raise
-them [here](https://github.com/Cloud-Technology-Solutions/grole/issues).
+them [here](https://github.com/jay-kinder/grole/issues).
 
 It will be a big help if you could please try to choose the most appropriate label
 when raising an issue for `grole`.
