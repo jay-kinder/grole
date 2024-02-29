@@ -1,6 +1,6 @@
 {
   "name": "grole",
-  "image": "jaykinder/devcontainer:latest",
+  "image": "jaykinder/grole-devcontainer:latest",
   "customizations": {
     "vscode": {
       "extensions": [
