@@ -11,15 +11,15 @@ jobs:
       TESTCOVERAGE_THRESHOLD: 90
     steps:
       - name: Check Out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version-file: "./go.mod"
 
       - name: Create sa.json File
-        uses: jsdaniell/create-json@v1.2.2
+        uses: jsdaniell/create-json@v1.2.3
         with:
           name: "sa.json"
           json: ${{ secrets.GOOGLE_CREDENTIALS }}

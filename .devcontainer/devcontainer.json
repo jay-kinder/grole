@@ -1,6 +1,6 @@
 {
   "name": "grole",
-  "image": "eu.gcr.io/cts-public-images-1/cts-extra:latest",
+  "image": "jaykinder/devcontainer:latest",
   "customizations": {
     "vscode": {
       "extensions": [
