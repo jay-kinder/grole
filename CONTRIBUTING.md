@@ -61,7 +61,7 @@ workflow will release a new version of the code.
 
 ## Contacts :postbox:
 
-Maintainer: `jay-kinder-cts`
+Maintainer: `jay-kinder`
 
 ## Thank You :star:
 
