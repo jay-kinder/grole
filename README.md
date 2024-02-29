@@ -30,7 +30,7 @@ Then `grole` is the tool for you!
 If you already have Go installed, you can simply install `grole` using:
 
 ```bash
-go install github.com/Cloud-Technology-Solutions/grole@latest
+go install github.com/jay-kinder/grole@latest
 ```
 
 This will also allow you to update to the latest version.
@@ -43,7 +43,7 @@ If you don't have Go installed, you can install and update `grole` manually:
 GROLE_VERSION=v1.0.0 \
 
 sudo rm -rf /usr/local/bin/grole \
-wget -c https://github.com/Cloud-Technology-Solutions/grole/releases/download/"${GROLE_VERSION}"/grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz \
+wget -c https://github.com/jay-kinder/grole/releases/download/"${GROLE_VERSION}"/grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz \
 sudo tar -C /usr/local/bin -xzf grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz \
 rm -f grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz
 ```
@@ -54,7 +54,7 @@ rm -f grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz
 GROLE_VERSION=v1.0.0 \
 
 sudo rm -rf /usr/local/bin/grole \
-wget -c https://github.com/Cloud-Technology-Solutions/grole/releases/download/"${GROLE_VERSION}"/grole-"${GROLE_VERSION}"-"$(dpkg --print-architecture)".tar.gz \
+wget -c https://github.com/jay-kinder/grole/releases/download/"${GROLE_VERSION}"/grole-"${GROLE_VERSION}"-"$(dpkg --print-architecture)".tar.gz \
 sudo tar -C /usr/local/bin -xzf grole-"${GROLE_VERSION}"-"$(dpkg --print-architecture)".tar.gz \
 rm -f grole-"${GROLE_VERSION}"-"$(dpkg --print-architecture)".tar.gz
 ```
