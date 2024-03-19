@@ -19,10 +19,6 @@ repos:
         args:
           - --baseline
           - .secrets.baseline
-  - repo: https://github.com/gruntwork-io/pre-commit
-    rev: v0.1.23
-    hooks:
-      - id: shellcheck
   - repo: https://github.com/tekwizely/pre-commit-golang
     rev: v1.0.0-rc.1
     hooks:
