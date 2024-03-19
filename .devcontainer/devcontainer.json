@@ -1,21 +1,41 @@
 {
   "name": "grole",
-  "image": "jaykinder/grole-devcontainer:latest",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:debian-12",
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
         "davidanson.vscode-markdownlint",
-        "golang.go"
+        "golang.go",
+        "timonwong.shellcheck",
+        "foxundermoon.shell-format"
       ]
     }
   },
+  "containerEnv": {
+    "SHELL": "/usr/bin/zsh",
+    "HOME": "/home/vscode",
+    "ZSH_SUGGESTIONS_REPO": "https://github.com/zsh-users/zsh-autosuggestions",
+    "ZSH_HIGHLIGHTING_REPO": "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+    "GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS": "1"
+  },
   "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+    "ghcr.io/devcontainers/features/common-utils": {},
+    "ghcr.io/devcontainers-contrib/features/markdownlint-cli:1": {},
+    "ghcr.io/devcontainers/features/python": "3.9",
     "ghcr.io/devcontainers/features/go:1": {
       "version": "1.19"
     }
   },
-  "postCreateCommand": "pre-commit install && go install golang.org/x/tools/cmd/goimports@latest",
+  "postAttachCommand": {
+    "apt-packages": "sudo apt update && sudo apt install -y vim fzf shellcheck",
+    "pre-commit": "pip install pre-commit detect-secrets==1.4.0 && pre-commit install",
+    "clone-repos": "git clone ${ZSH_SUGGESTIONS_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git clone ${ZSH_HIGHLIGHTING_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
+    "zshrc-setup": "sed -i 's/plugins=(git)/plugins=(git gcloud golang docker fzf zsh-autosuggestions zsh-syntax-highlighting)/g' ${HOME}/.zshrc >> ${HOME}/.zshrc",
+    "go-installs": "go install golang.org/x/tools/cmd/goimports@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.1"
+  },
   "remoteUser": "vscode"
 }
