@@ -29,7 +29,7 @@
     }
   },
   "postAttachCommand": {
-    "apt-packages": "sudo apt update && sudo apt install -y vim fzf shellcheck",
+    "apt-packages": "sudo apt update && sudo apt install -y vim fzf",
     "pre-commit": "pip install pre-commit detect-secrets==1.4.0 && pre-commit install",
     "clone-repos": "git clone ${ZSH_SUGGESTIONS_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git clone ${ZSH_HIGHLIGHTING_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
     "zshrc-setup": "sed -i 's/plugins=(git)/plugins=(git gcloud golang docker fzf zsh-autosuggestions zsh-syntax-highlighting)/g' ${HOME}/.zshrc >> ${HOME}/.zshrc",
