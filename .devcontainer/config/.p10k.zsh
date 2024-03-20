@@ -14,9 +14,7 @@
     vcs                     # git status
     prompt_char             # prompt symbol
   )
-  typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    gcloud                  # google cloud cli account and project (https://cloud.google.com/)
-  )
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
   typeset -g POWERLEVEL9K_MODE=ascii
   typeset -g POWERLEVEL9K_ICON_PADDING=none
@@ -167,14 +165,6 @@
   typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=2
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=2
   typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=3
-
-
-############[ gcloud: google cloud account and project ]###########
-  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs'
-  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=51
-  typeset -g POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_ID//\%/%%}'
-  typeset -g POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_NAME//\%/%%}'
-  typeset -g POWERLEVEL9K_GCLOUD_REFRESH_PROJECT_NAME_SECONDS=60
 
 #########################[ user-defined prompt) ]############################
   function prompt_example() {
