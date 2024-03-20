@@ -15,11 +15,7 @@
     prompt_char             # prompt symbol
   )
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    virtualenv              # python virtualenv
-    terraform               # terraform workspace (https://www.terraform.io)
     gcloud                  # google cloud cli account and project (https://cloud.google.com/)
-    kubecontext             # current kubernetes context
-    aws                     # aws profile
   )
 
   typeset -g POWERLEVEL9K_MODE=ascii
@@ -172,17 +168,6 @@
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=2
   typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=3
 
-###############[ virtualenv: python virtual environment ]###
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=3
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
-  typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
-  typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
-
-#################[ terraform: terraform workspace]#################
-  typeset -g POWERLEVEL9K_TERRAFORM_SHOW_DEFAULT=true
-  typeset -g POWERLEVEL9K_TERRAFORM_CLASSES=(
-      '*'         OTHER)
-  typeset -g POWERLEVEL9K_TERRAFORM_OTHER_FOREGROUND=147
 
 ############[ gcloud: google cloud account and project ]###########
   typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs'
@@ -190,21 +175,6 @@
   typeset -g POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_ID//\%/%%}'
   typeset -g POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_NAME//\%/%%}'
   typeset -g POWERLEVEL9K_GCLOUD_REFRESH_PROJECT_NAME_SECONDS=60
-
-##############[ kubecontext: current kubernetes context ]#############
-  typeset -g POWERLEVEL9K_KUBECONTEXT_SHOW_ON_COMMAND='kubectl|helm|kubens|kubectx|oc|istioctl|kogito|k9s|helmfile|flux|fluxctl|stern'
-  typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
-      '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=212
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_CONTENT_EXPANSION=
-  POWERLEVEL9K_KUBECONTEXT_DEFAULT_CONTENT_EXPANSION+='${P9K_KUBECONTEXT_CLOUD_CLUSTER:-${P9K_KUBECONTEXT_NAME}}'
-  POWERLEVEL9K_KUBECONTEXT_DEFAULT_CONTENT_EXPANSION+='${${:-/$P9K_KUBECONTEXT_NAMESPACE}:#/default}'
-
-##################################[ aws: aws profile ]#####################
-  typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws'
-  typeset -g POWERLEVEL9K_AWS_CLASSES=(
-      '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=122
 
 #########################[ user-defined prompt) ]############################
   function prompt_example() {
