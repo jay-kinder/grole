@@ -11,14 +11,10 @@
       ]
     }
   },
-  "mounts": [
-    "source=${localWorkspaceFolder}/.devcontainer/config/.p10k.zsh,target=/home/vscode/.p10k.zsh,type=bind,consistency=cached"
-  ],
   "containerEnv": {
     "HOME": "/home/vscode",
     "ZSH_SUGGESTIONS_REPO": "https://github.com/zsh-users/zsh-autosuggestions",
     "ZSH_HIGHLIGHTING_REPO": "https://github.com/zsh-users/zsh-syntax-highlighting.git",
-    "POWERLEVEL10K_REPO": "https://github.com/romkatv/powerlevel10k.git",
     "GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS": "1"
   },
   "features": {
@@ -35,9 +31,9 @@
   },
   "postAttachCommand": {
     "pre-commit": "pip install pre-commit detect-secrets==1.4.0 && pre-commit install",
-    "clone-repos": "git clone ${ZSH_SUGGESTIONS_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git clone ${ZSH_HIGHLIGHTING_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && git clone --depth=1 ${POWERLEVEL10K_REPO} ${HOME}/powerlevel10k",
+    "clone-repos": "git clone ${ZSH_SUGGESTIONS_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git clone ${ZSH_HIGHLIGHTING_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
     "set-alias": "echo 'alias gproj=\"gcloud config set project\"\nalias gadl=\"gcloud auth application-default login\"' >> ${HOME}/.zshrc",
-    "zshrc-setup": "sed -i 's/plugins=(git)/plugins=(git gcloud golang docker zsh-autosuggestions zsh-syntax-highlighting)/g' ${HOME}/.zshrc && echo 'source ${HOME}/powerlevel10k/powerlevel10k.zsh-theme\n[[ ! -f ${HOME}/.p10k.zsh ]] || source ${HOME}/.p10k.zsh' >> ${HOME}/.zshrc",
+    "zshrc-setup": "sed -i 's/plugins=(git)/plugins=(git gcloud golang docker zsh-autosuggestions zsh-syntax-highlighting)/g' ${HOME}/.zshrc >> ${HOME}/.zshrc",
     "go-installs": "go install golang.org/x/tools/cmd/goimports@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.1"
   }
 }
