@@ -4,7 +4,7 @@
 ![Go Version](https://img.shields.io/github/go-mod/go-version/jay-kinder/grole?style=plastic)
 [![Pipeline Status](https://github.com/jay-kinder/grole/actions/workflows/release.yaml/badge.svg)](https://github.com/jay-kinder/grole/actions/workflows/release.yaml)
 
-![Maintained](https://img.shields.io/maintenance/yes/2023)
+![Maintained](https://img.shields.io/maintenance/yes/2024)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Description :rocket:
