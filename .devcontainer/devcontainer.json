@@ -4,10 +4,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-azuretools.vscode-docker",
         "redhat.vscode-yaml",
-        "davidanson.vscode-markdownlint",
-        "golang.go"
+        "davidanson.vscode-markdownlint"
       ]
     }
   },
@@ -28,7 +26,8 @@
       "version": "3.11"
     },
     "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.19"
+      "version": "1.19",
+      "golangciLintVersion": "v1.51.1"
     },
     "ghcr.io/devcontainers/features/ruby:1": {}
   },
@@ -37,6 +36,6 @@
     "clone-repos": "git clone ${ZSH_SUGGESTIONS_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git clone ${ZSH_HIGHLIGHTING_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
     "set-alias": "echo 'alias gproj=\"gcloud config set project\"\nalias gadl=\"gcloud auth application-default login\"' >> ${HOME}/.zshrc",
     "zshrc-setup": "sed -i 's/plugins=(git)/plugins=(git gcloud golang docker zsh-autosuggestions zsh-syntax-highlighting)/g' ${HOME}/.zshrc >> ${HOME}/.zshrc",
-    "go-installs": "go install golang.org/x/tools/cmd/goimports@latest && go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.51.1"
+    "go-installs": "go install golang.org/x/tools/cmd/goimports@latest"
   }
 }
