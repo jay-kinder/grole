@@ -27,7 +27,8 @@
     "ghcr.io/devcontainers/features/python": "3.9",
     "ghcr.io/devcontainers/features/go:1": {
       "version": "1.19"
-    }
+    },
+    "ghcr.io/devcontainers/features/ruby:1": {}
   },
   "postAttachCommand": {
     "pre-commit": "pip install pre-commit detect-secrets==1.4.0 && pre-commit install",
