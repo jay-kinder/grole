@@ -32,10 +32,6 @@
     "ghcr.io/devcontainers/features/ruby:1": {}
   },
   "postAttachCommand": {
-    "pre-commit": "pip install pre-commit detect-secrets==1.4.0 && pre-commit install",
-    "clone-repos": "git clone ${ZSH_SUGGESTIONS_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git clone ${ZSH_HIGHLIGHTING_REPO} ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting",
-    "set-alias": "echo 'alias gproj=\"gcloud config set project\"\nalias gadl=\"gcloud auth application-default login\"' >> ${HOME}/.zshrc",
-    "zshrc-setup": "sed -i 's/plugins=(git)/plugins=(git gcloud golang docker zsh-autosuggestions zsh-syntax-highlighting)/g' ${HOME}/.zshrc >> ${HOME}/.zshrc",
-    "go-installs": "go install golang.org/x/tools/cmd/goimports@latest"
+    "configure-container": ".devcontainer/config/startup.sh"
   }
 }
