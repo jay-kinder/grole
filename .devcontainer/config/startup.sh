@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # pip installs
-pip install pre-commit detect-secrets==1.4.0
+pip install pre-commit==3.8.0 detect-secrets==1.4.0
 
 # install pre-commit in umbrella
 pre-commit install
