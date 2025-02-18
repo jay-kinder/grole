@@ -32,7 +32,7 @@ When raising a PR, please be descriptive in both the Title and Description.
 If the PR closes an issue, please indicate this in the PR title with
 `Closes #issuenumber`.
 
-You should add a reviewer to each PR you raise, which can be `jay-kinder-cts` for
+You should add a reviewer to each PR you raise, which can be `jay-kinder` for
 now.
 
 ## Workflows :sunglasses:
@@ -44,7 +44,7 @@ On PR:
 
 1. `pre-commit`: this runs a series of checks against the pushed code, to ensure
 that it adheres to the guildelines put in place.
-2. 'test-coverage`: this checks that test coverage remains over 90%. If you have
+2. `test-coverage`: this checks that test coverage remains over 90%. If you have
 coded a new feature, you should ensure there is a test(s) covering this.
 
 On push to `main` branch:
