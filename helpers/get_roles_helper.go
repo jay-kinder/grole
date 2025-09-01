@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"google.golang.org/api/iam/v1"
+	iam "google.golang.org/api/iam/v1"
 )
 
 func GetRolesHelper(userPerm []string) ([]*iam.Role, error) {
@@ -44,6 +44,6 @@ func GetRolesHelper(userPerm []string) ([]*iam.Role, error) {
 	if len(roleList) > 0 {
 		return roleList, nil
 	} else {
-		return []*iam.Role{}, fmt.Errorf("No Roles with the given Permission(s): %s", userPerm)
+		return []*iam.Role{}, fmt.Errorf("no roles with the given permission(s): %s", userPerm)
 	}
 }

@@ -21,13 +21,12 @@
     "ghcr.io/devcontainers/features/common-utils": {
       "configureZshAsDefaultShell": "true"
     },
-    "ghcr.io/devcontainers-contrib/features/markdownlint-cli:1": {},
+    "ghcr.io/devcontainers-extra/features/markdownlint-cli:1": {},
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.11"
     },
     "ghcr.io/devcontainers/features/go:1": {
-      "version": "1.22",
-      "golangciLintVersion": "1.59.1"
+      "version": "1.24"
     },
     "ghcr.io/devcontainers/features/ruby:1": {}
   },

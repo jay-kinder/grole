@@ -23,7 +23,7 @@ a PR.
 
 Please use the following convention when creating a new branch:
 
-`fb/issue-number-brief-description`
+`fb-issue-number-brief-description`
 
 Of course, you can leave the issue number out if it isn't applicable.
 
