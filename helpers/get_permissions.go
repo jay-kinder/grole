@@ -6,7 +6,7 @@ import (
 	"log"
 	"strings"
 
-	"google.golang.org/api/iam/v1"
+	iam "google.golang.org/api/iam/v1"
 )
 
 func GetPermissions(role string) ([]string, error) {
@@ -23,7 +23,7 @@ func GetPermissions(role string) ([]string, error) {
 
 	resp, err := iamService.Roles.Get(role).Context(ctx).Do()
 	if err != nil {
-		return []string{}, fmt.Errorf("Failed to find any Permissions for the given Role: %s", role)
+		return []string{}, fmt.Errorf("failed to find any permissions for the given role: %s", role)
 	} else {
 		return resp.IncludedPermissions, nil
 	}
