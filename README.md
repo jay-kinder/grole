@@ -4,7 +4,7 @@
 ![Go Version](https://img.shields.io/github/go-mod/go-version/jay-kinder/grole?style=plastic)
 [![Pipeline Status](https://github.com/jay-kinder/grole/actions/workflows/release.yaml/badge.svg)](https://github.com/jay-kinder/grole/actions/workflows/release.yaml)
 
-![Maintained](https://img.shields.io/maintenance/yes/2025)
+![Maintained](https://img.shields.io/maintenance/yes/2026)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Description :rocket:
@@ -40,7 +40,7 @@ If you don't have Go installed, you can install and update `grole` manually:
 ### Linux
 
 ```bash
-GROLE_VERSION=v1.0.3 \
+GROLE_VERSION=v1.1.0 \
 
 sudo rm -rf /usr/local/bin/grole \
 wget -c https://github.com/jay-kinder/grole/releases/download/"${GROLE_VERSION}"/grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz \
@@ -51,7 +51,7 @@ rm -f grole-"${GROLE_VERSION}"-linux-"$(dpkg --print-architecture)".tar.gz
 ### Mac
 
 ```bash
-GROLE_VERSION=v1.0.3 \
+GROLE_VERSION=v1.1.0 \
 
 sudo rm -rf /usr/local/bin/grole \
 wget -c https://github.com/jay-kinder/grole/releases/download/"${GROLE_VERSION}"/grole-"${GROLE_VERSION}"-"$(dpkg --print-architecture)".tar.gz \
