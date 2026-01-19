@@ -6,9 +6,13 @@ import (
 
 func TestRhPermTrue(t *testing.T) {
 
-	got, _ := GetRolesHelper([]string{"compute.networks.get"})
+	got, err := GetRolesHelper([]string{"compute.networks.get"})
 
-	if got == nil {
+	if err != nil {
+		t.Errorf("Error should not be returned for valid permission: %v", err)
+	}
+
+	if len(got) == 0 {
 		t.Errorf("Permissions should be returned for this Role")
 	}
 }
