@@ -4,13 +4,26 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"runtime/debug"
 	"strings"
 
 	"github.com/akamensky/argparse"
 	"github.com/jay-kinder/grole/helpers"
 )
 
-var version string = "v1.0.5"
+var version string
+
+func versionString() string {
+	if version != "" {
+		return version
+	}
+	if info, ok := debug.ReadBuildInfo(); ok {
+		if v := info.Main.Version; v != "" && v != "(devel)" {
+			return v
+		}
+	}
+	return "devel"
+}
 
 func main() {
 	parser := argparse.NewParser("grole", "☁️  grole is a command line tool for establishing which Google Cloud Roles contain a given permission, and also which permissions a given Role has.")
@@ -53,6 +66,6 @@ func main() {
 		}
 
 	case *versionFlag:
-		fmt.Println(version)
+		fmt.Println(versionString())
 	}
 }
